@@ -19,7 +19,11 @@
                     <form action="{{route('login.store')}}" method="POST">
                         @csrf
                         <input type="email" name="email" placeholder="ایمیل" class="form-control mt-3">
-                        <input type="password" name="password" placeholder="رمز عبور" class="form-control mt-3">
+                        <input type="password" name="password" placeholder="رمز عبور" class="form-control mt-3 mb-3">
+                        <label for="">
+                            <input type="checkbox" name="remember">
+                            مرا به خاطر بسپار
+                        </label>
                         <button type="submit" class="btn btn-primary w-100 mt-3 text-dark border-0">ورود</button>
                         <a href="{{route('register')}}" class="w-100 btn btn-success mt-3 border-0">صفحه ثبت نام</a>
                     </form>
