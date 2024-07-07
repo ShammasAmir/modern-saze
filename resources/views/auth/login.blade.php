@@ -11,15 +11,21 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
 
-                    @foreach($errors->all() as $error)
+                    {{-- @foreach($errors->all() as $error)
                         <p>{{$error}}</p>
-                    @endforeach
+                    @endforeach --}}
 
                     <h3 class="text-center mb-5 fw-bold">ورود به حساب کاربری</h3>
                     <form action="{{route('login.store')}}" method="POST">
                         @csrf
                         <input type="text" name="email" placeholder="ایمیل یا موبایل" class="form-control mt-3">
+                        @error('email')
+                            <p class="text-danger py-2">{{$message}}</p>
+                        @enderror
                         <input type="password" name="password" placeholder="رمز عبور" class="form-control mt-3 mb-3">
+                        @error('password')
+                            <p class="text-danger py-2">{{$message}}</p>
+                        @enderror
                         <label for="">
                             <input type="checkbox" name="remember">
                             مرا به خاطر بسپار
