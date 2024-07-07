@@ -17,3 +17,12 @@ overlayMenu.addEventListener('click', function(){
     navbar.classList.remove('show')
     overlayMenu.classList.remove('show');
 })
+
+
+const authUser = document.querySelector('.auth-user');
+
+const authIcon = document.querySelector('.auth-user-icon');
+
+authIcon.addEventListener('click', function(){
+    authUser.classList.toggle('active');
+})

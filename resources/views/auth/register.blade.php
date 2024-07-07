@@ -1,59 +1,36 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('front.layouts.master')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('content')
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+    @include('front.partials.top-header')
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+    @include('front.partials.header')
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+    <div class="auth">
+        <div class="container py-5 my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+
+                    @foreach($errors->all() as $error)
+                        <p>{{$error}}</p>
+                    @endforeach
+
+                    <h3 class="text-center mb-5 fw-bold">ثبت نام کنید</h3>
+                    <form action="{{route('register.store')}}" method="POST">
+                        @csrf
+                        <input type="text" name="name" placeholder="نام ونام خانوادگی" class="form-control mt-3">
+                        <input type="text" name="mobile" placeholder="شماره موبایل" class="form-control mt-3">
+                        <input type="email" name="email" placeholder="ایمیل" class="form-control mt-3">
+                        <input type="password" name="password" placeholder="رمز عبور" class="form-control mt-3">
+                        <input type="password" name="password_confirmation" placeholder="تکرار رمز عبور" class="form-control mt-3">
+                        <button type="submit" class="btn btn-primary w-100 mt-3 text-dark border-0">ثبت نام</button>
+                        <a href="#" class="w-100 btn btn-success mt-3 border-0">صفحه ورود</a>
+                    </form>
+                </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+    @include('front.partials.footer')
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@endsection

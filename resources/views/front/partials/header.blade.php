@@ -40,4 +40,31 @@
     </nav>
   
     <div class="overlay-menu"></div>
-  </header>
+</header>
+  
+
+<div class="auth-user">
+
+  @guest
+    <div class="auth-users">
+      <a href="{{route('register')}}" style="padding-left: 10px;">ثبت نام</a>
+      /
+      <a href="" style="padding-right: 10px;">ورود</a>
+    </div>
+  @else
+    <div class="profile">
+      <div class="prof" style="padding-bottom: 20px;">
+        <a href="">پروفایل</a>
+      </div>
+      <div class="logout">
+        <div>خروج</div>
+      </div>
+    </div>
+  @endguest
+
+  
+  
+  <div class="auth-user-icon">
+    <i class="fas fa-cog fa-spin"></i>
+  </div>
+</div>
