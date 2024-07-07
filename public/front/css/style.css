@@ -821,3 +821,7 @@ header{
 .auth-user a{
     color: #000;
 }
+
+.auth p{
+    font-size: 13px;
+}
