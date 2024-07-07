@@ -26,3 +26,7 @@ const authIcon = document.querySelector('.auth-user-icon');
 authIcon.addEventListener('click', function(){
     authUser.classList.toggle('active');
 })
+
+function logoutUser(){
+    document.querySelector('#logout').submit();
+}

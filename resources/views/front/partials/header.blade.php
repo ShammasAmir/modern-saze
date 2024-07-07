@@ -54,16 +54,19 @@
   @else
     <div class="profile">
       <div class="prof" style="padding-bottom: 20px;">
-        <a href="">پروفایل</a>
+        <a href="{{route('dashboard')}}" target="_blank">پروفایل</a>
       </div>
       <div class="logout">
-        <div>خروج</div>
+        <div onclick="logoutUser()" style="cursor: pointer;">خروج</div>
       </div>
     </div>
+
+    <form action="{{route('logout')}}" method="POST" id="logout">
+      @csrf
+    </form>
+
   @endguest
 
-  
-  
   <div class="auth-user-icon">
     <i class="fas fa-cog fa-spin"></i>
   </div>
