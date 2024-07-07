@@ -49,7 +49,7 @@
     <div class="auth-users">
       <a href="{{route('register')}}" style="padding-left: 10px;">ثبت نام</a>
       /
-      <a href="" style="padding-right: 10px;">ورود</a>
+      <a href="{{route('login')}}" style="padding-right: 10px;">ورود</a>
     </div>
   @else
     <div class="profile">

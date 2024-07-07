@@ -24,7 +24,7 @@
                         <input type="password" name="password" placeholder="رمز عبور" class="form-control mt-3">
                         <input type="password" name="password_confirmation" placeholder="تکرار رمز عبور" class="form-control mt-3">
                         <button type="submit" class="btn btn-primary w-100 mt-3 text-dark border-0">ثبت نام</button>
-                        <a href="#" class="w-100 btn btn-success mt-3 border-0">صفحه ورود</a>
+                        <a href="{{route('login')}}" class="w-100 btn btn-success mt-3 border-0">صفحه ورود</a>
                     </form>
                 </div>
             </div>
