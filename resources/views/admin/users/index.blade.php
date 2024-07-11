@@ -23,7 +23,8 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->mobile}}</td>
-                        <td>{{$user->role}}</td>
+                        {{-- <td>{{$user->role}}</td> --}}
+                        <td>{{$user->RoleFarsi()}}</td>
                         <td>{{$user->created_at}}</td>
                         <td><a href="{{route('users.edit', $user->id)}}" class="text-warning text-decoration-none"><i class="fas fa-edit"></i></a></td>
                         <td><a href="" class="text-danger text-decoration-none"><i class="fas fa-trash"></i></a></td>
