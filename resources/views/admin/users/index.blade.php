@@ -37,3 +37,17 @@
     </div>
     
 @endsection
+
+@section('js')
+    @if(Session::has('update'))
+    <script>
+        Swal.fire({
+            // icon: 'success',
+            // title: '{{session('update')}}',
+            title: 'تبریک',
+            text: 'کاربر با موفقیت ویرایش شد',
+            confirmButtonText: 'تایید',
+        })
+    </script>
+    @endif
+@endsection

@@ -103,6 +103,9 @@ class UserController extends Controller
             'role'=>$request->role,
         ]);
 
+        // $request->session()->flash('update','کاربر با موفقیت ویرایش شد');
+        $request->session()->flash('update');
+
         return redirect()->route('users.index');
     }
 

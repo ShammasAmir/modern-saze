@@ -34,4 +34,11 @@
     <script src="{{asset('back/js/jquery.js')}}"></script>
     <script src="{{asset('back/js/all.min.js')}}"></script>
     <script src="{{asset('back/js/main.js')}}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+    <script src="{{asset('back/js/sweetalert2.js')}}"></script>
+    {{-- <script>
+        Swal.fire('salam')
+    </script> --}}
+    @yield('js')
+</body>
 </html>
