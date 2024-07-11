@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Administrator;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -65,7 +66,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        // return view('admin.users.edit');
+
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -77,7 +81,29 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // return 'user updated!';
+
+        $request->validate([
+            'name'=>'required|string|max:255',
+            // 'email'=>'required|string|email|max:255|unique:users',
+            // 'email'=>['required','string','email','max:255','unique:users'],
+            'email'=>['required','string','email','max:255',Rule::unique('users')->ignore($id)],
+            // 'mobile'=>'required|string|max:255|unique:users',
+            'mobile'=>['required','string','max:255',Rule::unique('users')->ignore($id)],
+            'role'=>'required|string|max:255',
+        ]);
+
+        // dd($request->all());
+
+        $user = User::findOrFail($id);
+        $user->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'mobile'=>$request->mobile,
+            'role'=>$request->role,
+        ]);
+
+        return redirect()->route('users.index');
     }
 
     /**

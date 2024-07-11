@@ -6,7 +6,7 @@
 
     <div class="dynamic-content">
         <h2>کاربران سایت</h2>
-        <table>
+        <table class="mb-5">
             <tbody>
                 <tr>
                     <th>نام</th>
@@ -25,7 +25,7 @@
                         <td>{{$user->mobile}}</td>
                         <td>{{$user->role}}</td>
                         <td>{{$user->created_at}}</td>
-                        <td><a href="" class="text-warning text-decoration-none"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="{{route('users.edit', $user->id)}}" class="text-warning text-decoration-none"><i class="fas fa-edit"></i></a></td>
                         <td><a href="" class="text-danger text-decoration-none"><i class="fas fa-trash"></i></a></td>
                     </tr>
                 @endforeach

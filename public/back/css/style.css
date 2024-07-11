@@ -7,7 +7,8 @@
 *{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-x: hidden;
     box-sizing: border-box;
 }
 
@@ -33,6 +34,7 @@ body{
     -moz-transition: .3s;
     -ms-transition: .3s;
     -o-transition: .3s;
+    overflow-y: scroll;
 }
 
 .slidenav .logo{
@@ -79,7 +81,6 @@ body{
 #mySlidenav.active{
     width: 80px;
 }
-
 
 #main{
     margin-right: 300px;
@@ -196,6 +197,46 @@ body{
 .page-item.active .page-link{
     background-color: #f7403b;
     border: 2px solid #f7403b;
+}
+
+.form-group{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-group label{
+    display: block;
+    margin: 10px;
+    color: #f7403b;
+    width: 100%;
+}
+
+.form-group input{
+    width: 50%;
+    padding: 7px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-group select{
+    padding: 7px;
+    width: 50%;
+    margin-top: 10px;
+    outline: none;
+}
+
+.form-group select option{
+    padding: 5px;
+}
+
+.form-group .btn-admin{
+    background-color: #f7403b;
+    color: #fff;
+    padding: 6px 8px;
+    width: 120px;
+    margin-top: 20px;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 992px){

@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('front.index');
 })->name('home');
 
+
 Route::get('/dashboard', function () {
     // return view('dashboard');
     // return view('admin.index');
@@ -26,8 +27,12 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+
 // Route::get('/dashboard/users', function(){
 //     return 'users';
 // });
 
-Route::get('/dashboard/users', [UserController::class, 'index']);
+
+// Route::get('/dashboard/users', [UserController::class, 'index']);
+Route::resource('/dashboard/users', UserController::class);
+// Route::resource('/dashboard/users', UserController::class)->parameters(['users'=>'id']);
