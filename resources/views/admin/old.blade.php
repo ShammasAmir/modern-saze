@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="old-project">
+    <div class="dynamic-content">
         <h2>آخرین پروژه های انجام شده</h2>
         <table>
             <tbody>

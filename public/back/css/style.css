@@ -193,6 +193,11 @@ body{
     visibility: visible;
 }
 
+.page-item.active .page-link{
+    background-color: #f7403b;
+    border: 2px solid #f7403b;
+}
+
 @media screen and (max-width: 992px){
     #main .information{
         flex-wrap: wrap;
