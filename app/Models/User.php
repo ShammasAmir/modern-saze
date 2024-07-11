@@ -43,4 +43,8 @@ class User extends Authenticatable
         if($this->role==='author') return 'نویسنده';
         if($this->role==='admin') return 'مدیر سایت';
     }
+
+    public function Jalali(){
+        return verta($this->created_at)->format('Y/m/d');
+    }
 }

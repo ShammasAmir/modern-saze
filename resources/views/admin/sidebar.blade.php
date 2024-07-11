@@ -4,7 +4,7 @@
         <span class="icon"><i class="fas fa-eye"></i></span>
         نمایش وب سایت
     </a>
-    <a href="#" class="icon-a">
+    <a href="{{route('dashboard')}}" class="icon-a">
         <span class="icon"><i class="fas fa-home"></i></span>
         داشبورد
     </a>
@@ -48,7 +48,7 @@
         <span class="icon"><i class="fas fa-clipboard-list"></i></span>
         فوتر
     </a>
-    <a href="#" class="icon-a">
+    <a href="{{route('users.index')}}" class="icon-a">
         <span class="icon"><i class="fas fa-users"></i></span>
         کاربران
     </a>
