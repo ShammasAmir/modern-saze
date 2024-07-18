@@ -8,6 +8,7 @@
         <h2>کاربران سایت</h2>
         <table class="mb-5">
             <tbody>
+
                 <tr>
                     <th>نام</th>
                     <th>ایمیل</th>
@@ -16,8 +17,8 @@
                     <th>تاریخ عضویت</th>
                     <th>ویرایش</th>
                     <th>حذف</th>
-                    
                 </tr>
+
                 @foreach ($users as $user)
                     <tr>
                         <td>{{$user->name}}</td>
@@ -28,9 +29,18 @@
                         {{-- <td>{{$user->created_at}}</td> --}}
                         <td>{{$user->Jalali()}}</td>
                         <td><a href="{{route('users.edit', $user->id)}}" class="text-warning text-decoration-none"><i class="fas fa-edit"></i></a></td>
-                        <td><a href="" class="text-danger text-decoration-none"><i class="fas fa-trash"></i></a></td>
+                        {{-- <td><a href="" class="text-danger text-decoration-none"><i class="fas fa-trash"></i></a></td> --}}
+                        {{-- <td><button class="text-danger bg-transparent border-0"><i class="fas fa-trash"></i></button></td> --}}
+                        <td>
+                            <form action="{{route('users.destroy', $user->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="text-danger bg-transparent border-0"><i class="fas fa-trash"></i></button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
+
             </tbody>
         </table>
         {{$users->links()}}
@@ -46,6 +56,15 @@
             // title: '{{session('update')}}',
             title: 'تبریک',
             text: 'کاربر با موفقیت ویرایش شد',
+            confirmButtonText: 'تایید',
+        })
+    </script>
+    @endif
+    @if(Session::has('destroy'))
+    <script>
+        Swal.fire({
+            title: 'تبریک',
+            text: 'کاربر با موفقیت حذف شد',
             confirmButtonText: 'تایید',
         })
     </script>
