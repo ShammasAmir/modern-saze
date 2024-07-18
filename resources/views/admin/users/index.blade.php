@@ -39,7 +39,10 @@
                             </form>
                         </td> --}}
                         <td>
-                            <a href="" class="text-danger text-decoration-none" onclick="destroyUser(event, {{$user->id}})"><i class="fas fa-trash"></i></a>
+                            {{-- <a href="" class="text-danger text-decoration-none" onclick="destroyUser(event, {{$user->id}})"><i class="fas fa-trash"></i></a> --}}
+                            @if((auth()->user()->id !== $user->id) && ($user->role !== 'admin'))
+                                <a href="" class="text-danger text-decoration-none" onclick="destroyUser(event, {{$user->id}})"><i class="fas fa-trash"></i></a>
+                            @endif
                             <form action="{{route('users.destroy', $user->id)}}" method="POST" id="delete-user-{{$user->id}}">
                                 @csrf
                                 @method('DELETE')
