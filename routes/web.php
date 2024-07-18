@@ -35,5 +35,5 @@ require __DIR__.'/auth.php';
 
 // Route::get('/dashboard/users', [UserController::class, 'index']);
 // Route::resource('/dashboard/users', UserController::class);
-Route::middleware(['auth'])->resource('/dashboard/users', UserController::class);
+Route::middleware(['auth', 'admin'])->resource('/dashboard/users', UserController::class);
 // Route::resource('/dashboard/users', UserController::class)->parameters(['users'=>'id']);
