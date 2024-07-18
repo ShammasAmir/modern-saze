@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Administrator\User\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -79,19 +80,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    // public function update(Request $request, $id)
+    public function update(UpdateUserRequest $request, $id)
     {
         // return 'user updated!';
 
-        $request->validate([
-            'name'=>'required|string|max:255',
-            // 'email'=>'required|string|email|max:255|unique:users',
-            // 'email'=>['required','string','email','max:255','unique:users'],
-            'email'=>['required','string','email','max:255',Rule::unique('users')->ignore($id)],
-            // 'mobile'=>'required|string|max:255|unique:users',
-            'mobile'=>['required','string','max:255',Rule::unique('users')->ignore($id)],
-            'role'=>'required|string|max:255',
-        ]);
+        // $request->validate([
+        //     'name'=>'required|string|max:255',
+        //     // 'email'=>'required|string|email|max:255|unique:users',
+        //     // 'email'=>['required','string','email','max:255','unique:users'],
+        //     'email'=>['required','string','email','max:255',Rule::unique('users')->ignore($id)],
+        //     // 'mobile'=>'required|string|max:255|unique:users',
+        //     'mobile'=>['required','string','max:255',Rule::unique('users')->ignore($id)],
+        //     'role'=>'required|string|max:255',
+        // ]);
 
         // dd($request->all());
 
