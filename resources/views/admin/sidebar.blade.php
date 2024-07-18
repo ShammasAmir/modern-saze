@@ -1,6 +1,6 @@
 <div id="mySlidenav" class="slidenav">
     <p class="logo"><span>M</span>odern-Saze</p>
-    <a href="#" class="icon-a">
+    <a href="{{route('home')}}" class="icon-a">
         <span class="icon"><i class="fas fa-eye"></i></span>
         نمایش وب سایت
     </a>
