@@ -2,11 +2,11 @@
 
 @section('content')
    
-  @include('front.partials.top-header')
+  @include('front.partials.topheader')
 
   @include('front.partials.header')
 
-  @include('front.partials.hero-wrap')
+  @include('front.partials.hero')
 
   @include('front.partials.about')
 
@@ -22,7 +22,7 @@
 
   @include('front.partials.testimonial')
 
-  @include('front.partials.blogs')
+  @include('front.partials.blog')
 
   @include('front.partials.contact')
 
