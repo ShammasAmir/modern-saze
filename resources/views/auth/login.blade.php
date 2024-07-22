@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('front.partials.top-header')
+    @include('front.partials.topheader')
 
     @include('front.partials.header')
 
